@@ -1,6 +1,12 @@
 # fetcher.js
 
-### Example:
+## Installation
+
+```html
+<script src='https://cdn.jsdelivr.net/gh/lullaby6/fetcher.js/cdn.js'></script>       
+```
+
+## Usage
 
 ```js
 const todosFetcher = fetcher({
