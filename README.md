@@ -37,8 +37,7 @@ Add the library directly to your HTML via CDN:
 
 #### Direct Download
 
-Download the minified version:
-- <a href="https://cdn.jsdelivr.net/gh/lullaby6/fetcher.js/fetcher.cdn.js" target="_blank">fetcher.cdn.js</a>
+Download the cdn version: <a href="https://cdn.jsdelivr.net/gh/lullaby6/fetcher.js/fetcher.cdn.js" target="_blank">fetcher.cdn.js</a>
 
 Include the downloaded file in your project:
 
