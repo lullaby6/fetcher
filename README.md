@@ -31,7 +31,7 @@ import fetcher from 'fetcher.js/fetcher.esm.js';
 <script src='https://cdn.jsdelivr.net/gh/lullaby6/fetcher.js/fetcher.cdn.js'></script>
 ```
 
-##### Direct Download
+##### Download
 
 <a href="https://cdn.jsdelivr.net/gh/lullaby6/fetcher.js/fetcher.cdn.js" target="_blank">Download</a> and include the downloaded file in your project:
 
@@ -39,7 +39,7 @@ import fetcher from 'fetcher.js/fetcher.esm.js';
 <script src="/path/to/fetcher.cdn.js"></script>
 ```
 
-### Usage:
+### Examples:
 
 ```js
 const todosFetcher = fetcher({
@@ -47,12 +47,14 @@ const todosFetcher = fetcher({
     type: 'json',
 })
 
+// query path value
 const todoOne = await todosFetcher.get({
     query: 1
 })
 
 console.log(todoOne);
 
+// url params
 const first10Todos = await todosFetcher.get({
     params: {
         _limit: 10
@@ -60,4 +62,41 @@ const first10Todos = await todosFetcher.get({
 })
 
 console.log(first10Todos);
+
+// create
+const newTodo = await todosFetcher.post({
+    body: {
+        title: 'New todo',
+        completed: false
+    }
+})
+
+console.log(newTodo);
+
+// update
+const updatedTodo = await todosFetcher.put({
+    query: 1,
+    body: {
+        title: 'Updated todo',
+        completed: true
+    }
+})
+
+console.log(updatedTodo);
+
+// delete
+const deletedTodo = await todosFetcher.delete({
+    query: 1
+})
+
+console.log(deletedTodo);
+
+// headers
+const todosHeaders = await todosFetcher.get({
+    headers: {
+        'Content-Type': 'application/json'
+    }
+})
+
+console.log(todosHeaders);
 ```
