@@ -35,7 +35,7 @@ import fetcher from '@lullaby6/fetcher';
 <a href="https://cdn.jsdelivr.net/gh/lullaby6/fetcher/fetcher.js" target="_blank">Download</a> and include the downloaded file in your project:
 
 ```js
-<script src="/path/to/fetcher.cdn.js"></script>
+<script src="/path/to/fetcher.js"></script>
 ```
 
 ## Examples:
