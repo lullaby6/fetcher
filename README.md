@@ -12,15 +12,13 @@ Install the library using NPM:
 npm i @lullaby6/fetcher
 ```
 
-#### CommonJS
+#### Import
 
 ```js
+// CoommonJS
 const fetcher = require('@lullaby6/fetcher');
-```
 
-#### ES Modules
-
-```js
+// ES Modules
 import fetcher from '@lullaby6/fetcher';
 ```
 
@@ -38,64 +36,125 @@ import fetcher from '@lullaby6/fetcher';
 <script src="/path/to/fetcher.js"></script>
 ```
 
-## Examples:
+## Basic Usage
+
+Create a fetcher instance for your API endpoint:
 
 ```js
-const todosFetcher = fetcher({
-    url: 'https://jsonplaceholder.typicode.com/todos',
+const api = fetcher({
+    url: 'https://api.example.com/v1',
     type: 'json',
-})
-
-// query path value
-const todoOne = await todosFetcher.get({
-    query: 1
-})
-
-console.log(todoOne);
-
-// url params
-const first10Todos = await todosFetcher.get({
-    params: {
-        _limit: 10
-    }
-})
-
-console.log(first10Todos);
-
-// create
-const newTodo = await todosFetcher.post({
-    body: {
-        title: 'New todo',
-        completed: false
-    }
-})
-
-console.log(newTodo);
-
-// update
-const updatedTodo = await todosFetcher.put({
-    query: 1,
-    body: {
-        title: 'Updated todo',
-        completed: true
-    }
-})
-
-console.log(updatedTodo);
-
-// delete
-const deletedTodo = await todosFetcher.delete({
-    query: 1
-})
-
-console.log(deletedTodo);
-
-// headers
-const todosHeaders = await todosFetcher.get({
     headers: {
-        'Content-Type': 'application/json'
+        'Authorization': 'Bearer your-token'
     }
-})
-
-console.log(todosHeaders);
+});
 ```
+
+## Examples:
+
+### Basic CRUD Operations
+
+```js
+// GET request
+const users = await api.get({
+    query: 'users'  // GET https://api.example.com/v1/users
+});
+
+// GET with query parameters
+const activeUsers = await api.get({
+    query: 'users',
+    params: {
+        status: 'active',
+        limit: 10
+    }
+    // GET https://api.example.com/v1/users?status=active&limit=10
+});
+
+// POST request with body
+const newUser = await api.post({
+    query: 'users',
+    body: {
+        name: 'John Doe',
+        email: 'john@example.com'
+    }
+});
+
+// PUT request
+const updatedUser = await api.put({
+    query: 'users/123',
+    body: {
+        name: 'John Updated'
+    }
+});
+
+// DELETE request
+const deletedUser = await api.delete({
+    query: 'users/123'
+});
+```
+
+### Advanced Usage
+
+#### Custom Headers Per Request
+
+```js
+const response = await api.get({
+    query: 'secure-endpoint',
+    headers: {
+        'X-Custom-Header': 'value',
+        'Authorization': 'Bearer different-token'
+    }
+});
+```
+
+#### Different Content Types
+
+```js
+// Form Data
+const formSubmission = await api.post({
+    query: 'upload',
+    contentType: 'multipart/form-data',
+    body: {
+        file: fileInput.files[0],
+        description: 'Profile picture'
+    }
+});
+
+// URL Encoded
+const urlEncodedSubmission = await api.post({
+    query: 'submit-form',
+    contentType: 'application/x-www-form-urlencoded',
+    body: {
+        username: 'john_doe',
+        password: 'secure123'
+    }
+});
+```
+
+### Instance Configuration
+
+You can configure default options when creating a fetcher instance:
+
+```js
+const api = fetcher({
+    url: 'https://api.example.com',
+    type: 'json',
+    headers: {
+        'Authorization': 'Bearer token',
+        'Accept': 'application/json'
+    },
+    mode: 'cors',
+    cache: 'no-cache',
+    params: {
+        version: 'v1'  // Applied to all requests
+    }
+});
+```
+
+## License
+
+MIT
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
