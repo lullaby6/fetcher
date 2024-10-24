@@ -50,111 +50,60 @@ const api = fetcher({
 });
 ```
 
-## Examples:
-
-### Basic CRUD Operations
+## Usage
 
 ```js
-// GET request
-const users = await api.get({
-    query: 'users'  // GET https://api.example.com/v1/users
-});
+const todosApi = fetcher({
+    url: 'https://api.example.com/todos',
+    type: 'json'
+})
 
-// GET with query parameters
-const activeUsers = await api.get({
-    query: 'users',
+// Get all todos
+const todos = await todosApi.get()
+
+// Get single todo by ID
+const todo = await todosApi.get({
+    query: '123' // GET /todos/123
+})
+
+// Create todo
+const newTodo = await todosApi.post({
+    body: {
+        title: 'New todo',
+        completed: false
+    }
+})
+
+// Update todo by ID
+const updatedTodo = await todosApi.put({
+    query: '123', // PUT /todos/123
+    body: {
+        completed: true
+    }
+})
+
+// Delete todo by ID
+const deleted = await todosApi.delete({
+    query: '123' // DELETE /todos/123
+})
+
+// Using URL parameters
+const filteredTodos = await todosApi.get({
     params: {
-        status: 'active',
+        completed: true,
         limit: 10
     }
-    // GET https://api.example.com/v1/users?status=active&limit=10
-});
+    // GET /todos?completed=true&limit=10
+})
 
-// POST request with body
-const newUser = await api.post({
-    query: 'users',
-    body: {
-        name: 'John Doe',
-        email: 'john@example.com'
-    }
-});
-
-// PUT request
-const updatedUser = await api.put({
-    query: 'users/123',
-    body: {
-        name: 'John Updated'
-    }
-});
-
-// DELETE request
-const deletedUser = await api.delete({
-    query: 'users/123'
-});
-```
-
-### Advanced Usage
-
-#### Custom Headers Per Request
-
-```js
-const response = await api.get({
-    query: 'secure-endpoint',
+// Using custom headers
+const todoWithAuth = await todosApi.get({
     headers: {
-        'X-Custom-Header': 'value',
-        'Authorization': 'Bearer different-token'
+        'Authorization': 'Bearer token'
     }
-});
-```
-
-#### Different Content Types
-
-```js
-// Form Data
-const formSubmission = await api.post({
-    query: 'upload',
-    contentType: 'multipart/form-data',
-    body: {
-        file: fileInput.files[0],
-        description: 'Profile picture'
-    }
-});
-
-// URL Encoded
-const urlEncodedSubmission = await api.post({
-    query: 'submit-form',
-    contentType: 'application/x-www-form-urlencoded',
-    body: {
-        username: 'john_doe',
-        password: 'secure123'
-    }
-});
-```
-
-### Instance Configuration
-
-You can configure default options when creating a fetcher instance:
-
-```js
-const api = fetcher({
-    url: 'https://api.example.com',
-    type: 'json',
-    headers: {
-        'Authorization': 'Bearer token',
-        'Accept': 'application/json'
-    },
-    mode: 'cors',
-    cache: 'no-cache',
-    params: {
-        version: 'v1'  // Applied to all requests
-    }
-});
+})
 ```
 
 ## License
 
 MIT
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
