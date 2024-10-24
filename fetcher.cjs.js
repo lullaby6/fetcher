@@ -101,6 +101,8 @@ class Fetcher {
 
         const response = await fetch(url, options)
 
+        if (!response.ok) throw new Error(response.statusText)
+
         let type = null
 
         if (props && props.type) type = props.type
@@ -131,3 +133,5 @@ class Fetcher {
 function fetcher (props) {
     return new Fetcher(props)
 }
+
+module.exports = fetcher
