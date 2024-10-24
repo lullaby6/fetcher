@@ -1,7 +1,7 @@
 {
   "name": "@lullaby6/fetcher",
-  "version": "1.1.6",
-  "description": "Groups HTTP requests by entity",
+  "version": "1.1.8",
+  "description": "HTTP client for reusable API instances.",
   "main": "index.cjs.js",
   "module": "index.mjs.js",
   "scripts": {

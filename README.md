@@ -106,8 +106,6 @@ const todoWithAuth = await todosApi.get({
 
 ## Options
 
-## Configuration Options
-
 | Option | Default | Description |
 |--------|---------|-------------|
 | `url` | `window.location.href` | Base URL for requests |
