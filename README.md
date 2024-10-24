@@ -15,24 +15,24 @@ npm i @lullaby6/fetcher
 #### CommonJS
 
 ```js
-const fetcher = require('fetcher/fetcher.cjs.js');
+const fetcher = require('@lullaby6/fetcher');
 ```
 
 #### ES Modules
 
 ```js
-import fetcher from 'fetcher/fetcher.esm.js';
+import fetcher from '@lullaby6/fetcher';
 ```
 
 #### CDN
 
 ```html
-<script src='https://cdn.jsdelivr.net/gh/lullaby6/fetcher/fetcher.cdn.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/lullaby6/fetcher/fetcher.js'></script>
 ```
 
 #### Download
 
-<a href="https://cdn.jsdelivr.net/gh/lullaby6/fetcher/fetcher.cdn.js" target="_blank">Download</a> and include the downloaded file in your project:
+<a href="https://cdn.jsdelivr.net/gh/lullaby6/fetcher/fetcher.js" target="_blank">Download</a> and include the downloaded file in your project:
 
 ```js
 <script src="/path/to/fetcher.cdn.js"></script>
