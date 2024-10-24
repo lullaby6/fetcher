@@ -36,7 +36,7 @@ import fetcher from 'fetcher.js/fetcher.esm.js';
 <a href="https://cdn.jsdelivr.net/gh/lullaby6/fetcher.js/fetcher.cdn.js" target="_blank">Download</a> and include the downloaded file in your project:
 
 ```js
-<script src="/path/to/fetcher.js"></script>
+<script src="/path/to/fetcher.cdn.js"></script>
 ```
 
 ### Usage:
