@@ -1,6 +1,6 @@
 # Fetcher
 
-HTTP client that simplifies API requests and CRUD operations by letting you create reusable instances for each API endpoint.
+HTTP client for reusable API instances.
 
 ## Installation
 
@@ -108,17 +108,17 @@ const todoWithAuth = await todosApi.get({
 
 ## Configuration Options
 
-| Option | Description |
-|--------|-------------|
-| `url` | Base URL for requests |
-| `query` | Default path segment to append to URL |
-| `params` | Default URL parameters |
-| `headers` | Default headers |
-| `body` | Default body for POST/PUT requests |
-| `mode` | Request mode (e.g., 'cors', 'no-cors') |
-| `cache` | Cache mode for requests |
-| `type` | Response type (default: 'json') |
-| `contentType` | Request content type |
+| Option | Default | Description |
+|--------|---------|-------------|
+| `url` | `window.location.href` | Base URL for requests |
+| `query` | `null` | Default path segment to append to URL |
+| `params` | `null` | Default URL parameters |
+| `headers` | `null` | Default headers |
+| `body` | `null` | Default body for POST/PUT requests |
+| `mode` | `null` | Request mode (e.g., 'cors', 'no-cors') |
+| `cache` | `null` | Cache mode for requests |
+| `type` | `'json'` | Response type |
+| `contentType` | `'application/json'` | Request content type |
 
 ## License
 
