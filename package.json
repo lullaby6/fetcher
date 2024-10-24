@@ -1,11 +1,11 @@
 {
-  "name": "fetcher.js",
+  "name": "@lullaby6/fetcher.js",
   "version": "1.1.1",
   "description": "Groups HTTP requests by entity",
   "main": "fetcher.cjs.js",
   "scripts": {
     "push": "git add . && git commit -m 'publish' && git push",
-    "publish": "git add . && git commit -m 'publish' && git push && npm publish --access public"
+    "publish": "git add . && git commit -m 'publish' && git push && npm publish --access=public"
   },
   "keywords": [
     "fetch",
