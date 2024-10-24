@@ -1,5 +1,5 @@
 {
-  "name": "@lullaby6/fetcher.js",
+  "name": "@lullaby6/fetcher",
   "version": "1.1.1",
   "description": "Groups HTTP requests by entity",
   "main": "fetcher.cjs.js",

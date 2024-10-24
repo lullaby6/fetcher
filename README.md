@@ -1,4 +1,4 @@
-# fetcher.js
+# Fetcher
 
 Groups HTTP requests by entity.
 
@@ -10,30 +10,30 @@ Install the library using NPM:
 
 
 ```bash
-npm i fetcher.js
+npm i fetcher
 ```
 
 #### CommonJS
 
 ```js
-const fetcher = require('fetcher.js/fetcher.cjs.js');
+const fetcher = require('fetcher/fetcher.cjs.js');
 ```
 
 #### ES Modules
 
 ```js
-import fetcher from 'fetcher.js/fetcher.esm.js';
+import fetcher from 'fetcher/fetcher.esm.js';
 ```
 
 #### CDN
 
 ```html
-<script src='https://cdn.jsdelivr.net/gh/lullaby6/fetcher.js/fetcher.cdn.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/lullaby6/fetcher/fetcher.cdn.js'></script>
 ```
 
 ##### Download
 
-<a href="https://cdn.jsdelivr.net/gh/lullaby6/fetcher.js/fetcher.cdn.js" target="_blank">Download</a> and include the downloaded file in your project:
+<a href="https://cdn.jsdelivr.net/gh/lullaby6/fetcher/fetcher.cdn.js" target="_blank">Download</a> and include the downloaded file in your project:
 
 ```js
 <script src="/path/to/fetcher.cdn.js"></script>
