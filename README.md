@@ -8,9 +8,8 @@ Groups HTTP requests by entity.
 
 Install the library using NPM:
 
-
 ```bash
-npm i fetcher
+npm i @lullaby6/fetcher
 ```
 
 #### CommonJS
