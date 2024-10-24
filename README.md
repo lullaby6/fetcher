@@ -1,6 +1,6 @@
 # Fetcher
 
-Groups HTTP requests by entity.
+HTTP client that simplifies API requests and CRUD operations by letting you create reusable instances for each API endpoint.
 
 ## Installation
 
@@ -103,6 +103,22 @@ const todoWithAuth = await todosApi.get({
     }
 })
 ```
+
+## Options
+
+## Configuration Options
+
+| Option | Description |
+|--------|-------------|
+| `url` | Base URL for requests |
+| `query` | Default path segment to append to URL |
+| `params` | Default URL parameters |
+| `headers` | Default headers |
+| `body` | Default body for POST/PUT requests |
+| `mode` | Request mode (e.g., 'cors', 'no-cors') |
+| `cache` | Cache mode for requests |
+| `type` | Response type (default: 'json') |
+| `contentType` | Request content type |
 
 ## License
 
