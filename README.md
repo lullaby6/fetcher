@@ -39,7 +39,7 @@ import fetcher from 'fetcher/fetcher.esm.js';
 <script src="/path/to/fetcher.cdn.js"></script>
 ```
 
-### Examples:
+## Examples:
 
 ```js
 const todosFetcher = fetcher({
