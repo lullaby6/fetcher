@@ -36,20 +36,6 @@ import fetcher from '@lullaby6/fetcher';
 <script src="/path/to/fetcher.js"></script>
 ```
 
-## Basic Usage
-
-Create a fetcher instance for your API endpoint:
-
-```js
-const api = fetcher({
-    url: 'https://api.example.com/v1',
-    type: 'json',
-    headers: {
-        'Authorization': 'Bearer your-token'
-    }
-});
-```
-
 ## Usage
 
 ```js
